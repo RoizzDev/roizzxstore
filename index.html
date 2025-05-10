@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>IzzReseller offc website</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap');
+
+  :root {
+    --neon-pink: #ff007f;
+    --neon-blue: #00ffff;
+    --neon-green: #39ff14;
+    --background-dark: #0a0a0a;
+    --card-bg: #111111;
+    --text-color: #e0e0e0;
+    --button-bg: #ff007f;
+    --button-hover-bg: #e60073;
+    --shadow-glow: 0 0 8px var(--neon-pink);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background-dark);
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--neon-pink);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--neon-pink);
+    text-shadow:
+      0 0 5px var(--neon-pink),
+      0 0 10px var(--neon-pink),
+      0 0 20px var(--neon-pink);
+  }
+
+  main {
+    max-width: 350px;
+    margin: 1rem auto 3rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 400px) {
+    main {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+    }
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow:
+      0 0 12px var(--neon-pink),
+      inset 0 0 5px var(--neon-pink);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 0 15px var(--neon-blue),
+      inset 0 0 12px var(--neon-blue);
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 140px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--neon-pink);
+    margin-bottom: 0.6rem;
+    filter: drop-shadow(0 0 5px var(--neon-pink));
+  }
+
+  .product-name {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    color: var(--neon-green);
+    text-shadow:
+      0 0 4px var(--neon-green);
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    color: var(--neon-blue);
+    font-weight: 600;
+  }
+
+  button.buy-btn {
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 8px var(--button-bg);
+  }
+
+  button.buy-btn:hover,
+  button.buy-btn:focus {
+    background-color: var(--button-hover-bg);
+    outline: none;
+    box-shadow:
+      0 0 12px var(--button-hover-bg),
+      0 0 20px var(--button-hover-bg);
+  }
+
+  footer {
+    color: var(--neon-pink);
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    padding: 0.8rem 1rem 1rem;
+    font-size: 0.85rem;
+  }
+
+</style>
+</head>
+<body>
+  <header>
+    Izz Reseller
+    menyediakan
+  </header>
+  <main id="products-container" aria-label="Product List">
+    <!-- Products will be inserted here -->
+  </main>
+  <footer>
+    &copy; 2024 Zanspiw Store &nbsp;&bull;&nbsp; All rights reserved
+  </footer>
+
+<script>
+  // WhatsApp phone number to send messages to (example number, replace with real number if available)
+  const whatsappNumber = '601139598499';
+
+  // List of 10 products, each has name, price, and image url
+  const products = [
+    {
+      name: "Panel Ptreodactly",
+      price: "Rm 1.00-5.00",
+      image: "https://g.top4top.io/p_3417af3dl1.jpg"
+    },
+    {
+      name: "Script Elaina-Ai",
+      price: "Rm 12.00",
+      image: "https://h.top4top.io/p_34174atfa1.jpg"
+    },
+    {
+      name: "Script Tredict (bug)",
+      price: "Rm 15.00",
+      image: "https://f.top4top.io/p_3417ctdjn1.jpg"
+    },
+    {
+      name: "Sewa Bot Elaina 14hari",
+      price: "Rm 5.00",
+      image: "https://h.top4top.io/p_34174atfa1.jpg"
+    },
+    {
+      name: "Sewa Bot Elaina Permanen",
+      price: "Rm 10.00",
+      image: "https://h.top4top.io/p_34174atfa1.jpg"
+    },
+    {
+      name: "Jasa Bug Whatsapp 1 nom",
+      price: "Rm 0.80 sen",
+      image: "https://e.top4top.io/p_3417hfb211.jpg"
+    },
+    {
+      name: "Jasa Pembuatan Web Store",
+      price: "Rm 20.00",
+      image: "https://d.top4top.io/p_3417nzzz61.jpg"
+    },
+    {
+      name: "Jasa Pembuatan Web Payment",
+      price: "Rm 10.00",
+      image: "https://f.top4top.io/p_3417dvq3z1.jpg"
+    },
+    {
+      name: "Jasa Tambah Fitur Bot",
+      price: "Rm 15.00",
+      image: "https://g.top4top.io/p_34170b3sb1.jpg"
+    },
+    {
+      name: "Virtual Private Server",
+      price: "(stok kosong)",
+      image: "https://g.top4top.io/p_3417xe5ll1.jpg"
+    }
+  ];
+
+  function createProductCard(product) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.name;
+    img.className = 'product-image';
+    card.appendChild(img);
+
+    const name = document.createElement('div');
+    name.textContent = product.name;
+    name.className = 'product-name';
+    card.appendChild(name);
+
+    const price = document.createElement('div');
+    price.textContent = product.price;
+    price.className = 'product-price';
+    card.appendChild(price);
+
+    const buyBtn = document.createElement('button');
+    buyBtn.className = 'buy-btn';
+    buyBtn.type = 'button';
+    buyBtn.textContent = 'Beli';
+    buyBtn.setAttribute('aria-label', `Buy ${product.name}`);
+
+    buyBtn.addEventListener('click', () => {
+      const message = encodeURIComponent(`Hai nak beli: ${product.name}`);
+      // WhatsApp URL schema
+      const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(url, '_blank');
+    });
+
+    card.appendChild(buyBtn);
+
+    return card;
+  }
+
+  // Render products
+  const container = document.getElementById('products-container');
+  products.forEach(product => {
+    container.appendChild(createProductCard(product));
+  });
+  
+  
+</script>
+<script type="text/javascript">
+  (function (1) {
+    if (1.search[1] === "/") {
+      var decoded = 1.search
+      .slice(1)
+      .split(&)
+      .map(function (s) {
+        return s.replace(/~and~/g "&");
+      })
+      .join("?");
+      window.history.replaceState(
+        null,
+        null,
+        1.pathname.slice(0, -1) + decode + 1.hash 
+        );
+      }
+  })(window.location);
+</script>
+</body>
+</html>
+
